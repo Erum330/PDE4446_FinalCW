@@ -3,14 +3,14 @@ import serial
 import time
 
 # Adjust COM port: Windows: "COM3", Linux: "/dev/ttyUSB0"
-ser = serial.Serial('COM3', 115200)
+ser = serial.Serial('COM3', 9600)
 time.sleep(2)
 
 cap = cv2.VideoCapture(0)
 
 pan = 0.0
 tilt = 0.0
-step = 0.05
+step = 0.1
 
 def send_servo_values(pan, tilt):
     msg = f"{pan} {tilt}\n"
